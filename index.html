@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PEMILU HMM ITB 2026/2026</title>
+    <title>PEMILU HMM ITB 2025/2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* CSS Reset dan Variabel Dasar */
@@ -115,23 +115,20 @@
             min-height: 80vh;
             display: flex;
             align-items: center;
-            /* Setup umum untuk background sections */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
         }
 
-        /* Dark overlay agar teks tetap terbaca meskipun gambar background terang */
         section::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Sesuaikan opacity overlay jika perlu */
+            background-color: rgba(0, 0, 0, 0.5); 
             z-index: 0;
         }
 
-        /* Pastikan konten berada di atas overlay */
         section .container {
             position: relative;
             z-index: 1;
@@ -179,21 +176,19 @@
             color: #000;
         }
 
-        /* Base class untuk div gambar (Tokoh/Map) */
         .placeholder-image {
             width: 100%;
             height: 450px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
             background-size: cover;
-            background-position: top center; /* Fokus di bagian kepala/atas karakter */
+            background-position: top center; 
             background-repeat: no-repeat;
             transition: background-image 0.5s ease; 
         }
 
         /* --- SECTION SPESIFIK --- */
         
-        /* 1. Landing */
         #landing {
             background-image: url('./Image Resource/Title bg.png');
             text-align: center;
@@ -206,12 +201,10 @@
         #landing .hero-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
         #landing .hero-subtitle { font-size: 1.2rem; color: #e0e0e0; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
 
-        /* 2. New Dawn */
         #new-dawn { 
             background-image: url('./Image Resource/newdawnbg.png'); 
         }
         
-        /* 3 & 4. Continuum (Kandidat Backgrounds) - Diset awal di CSS, diubah oleh JS */
         #caprince { 
             background-image: url('./Image Resource/Caprincebg1.png');
             transition: background-image 0.5s ease;
@@ -229,12 +222,11 @@
         .candidate-name { font-size: 2.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 10px; text-shadow: 1px 1px 4px rgba(0,0,0,0.8); }
         .details-paragraph { font-style: italic; margin-bottom: 20px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
 
-        /* Slideshow Controls */
         .small-candidate-icons {
             display: flex;
             gap: 20px;
             margin-top: 30px;
-            justify-content: center; /* Diperbaiki menjadi simetris/tengah */
+            justify-content: center; 
         }
 
         .small-icon-btn {
@@ -248,7 +240,6 @@
             background-position: center;
         }
         
-        /* Foto kecil pada tombol menggunakan foto karakter yang sama */
         .icon-prince-1 { background-image: url('./Image Resource/Caprince1.png'); }
         .icon-prince-2 { background-image: url('./Image Resource/Caprince2.png'); }
         .icon-senat-1 { background-image: url('./Image Resource/Casenat1.png'); }
@@ -260,13 +251,11 @@
             box-shadow: 0 0 15px rgba(192, 160, 96, 0.6);
         }
 
-        /* 5. Ritual */
         #ritual { 
             background-image: url('./Image Resource/Ritual Card.png'); 
             text-align: center; 
         }
         
-        /* Kurangi overlay khusus ritual jika bg-nya sudah bagus, tapi aman pakai default */
         #ritual .section-title { position: relative; z-index: 1; }
         
         .ritual-grid {
@@ -281,7 +270,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            background-color: rgba(10, 10, 10, 0.7); /* Background semi transparan untuk kartu */
+            background-color: rgba(10, 10, 10, 0.7); 
             border-radius: 8px;
         }
         
@@ -298,20 +287,17 @@
         .ritual-title { font-size: 1.3rem; color: var(--text-accent); margin-bottom: 10px; font-weight: 700;}
         .ritual-text { font-size: 0.95rem; color: #d0d0d0; }
 
-        /* 6. Chronicle */
         #chronicle { 
-            /* Tambahkan background jika chronicle punya bg khusus, jika tidak, pakai bg dark. Asumsi dark. */
             background-color: var(--bg-dark); 
         }
         #chronicle .placeholder-image { 
             background-image: url('./Image Resource/Chronicle Card.png');
-            background-size: contain; /* Contain agar peta tidak terpotong */
+            background-size: contain; 
             background-position: center;
-            background-color: transparent; /* Buang warna dasar */
+            background-color: transparent; 
             box-shadow: none;
             height: 400px;
         }
-
 
         /* --- RESPONSIVE MOBILE & TABLET --- */
         @media (max-width: 992px) {
@@ -379,7 +365,7 @@
 <body>
 
     <header class="sticky-header">
-        <a href="#landing" class="logo">PEMILU HMM</a>
+        <a href="#landing" class="logo">PEMILU HMM ITB</a>
         
         <div class="hamburger" id="hamburger-menu">
             <span></span>
@@ -391,8 +377,8 @@
             <ul>
                 <li><a href="#new-dawn" class="nav-link">A New Dawn</a></li>
                 <li><a href="#caprince" class="nav-link">The Continuum</a></li>
-                <li><a href="#chronicle" class="nav-link">Chronicle</a></li>
                 <li><a href="#ritual" class="nav-link">Rituals</a></li>
+                <li><a href="#chronicle" class="nav-link">Chronicle</a></li>
             </ul>
         </nav>
     </header>
@@ -400,9 +386,8 @@
     <main>
         <section id="landing">
             <div class="container">
-                <div class="logo-placeholder">LOGO</div>
-                <h1 class="hero-title">PEMILU HMM ITB<br>2026/2026</h1>
-                <p class="hero-subtitle">The final of the era and the beginning of the new era</p>
+                <h1 class="hero-title">PEMILU HMM ITB<br>2025/2026</h1>
+                <p class="hero-subtitle">The final of the era and the beginning of the new era!</p>
             </div>
         </section>
 
@@ -427,9 +412,9 @@
                     <div class="candidate-wrapper" id="prince-text-wrapper">
                         <p class="sub-title">The Continuum</p>
                         <p class="sub-title">Throne Seeker</p>
-                        <h2 class="candidate-name" id="prince-name">The Faza</h2>
-                        <p class="section-paragraph details-paragraph" id="prince-desc">Lorem ipsum dolor sit amet. Candidate number one aiming for the throne.</p>
-                        <a href="#" class="btn-details">Details</a>
+                        <h2 class="candidate-name" id="prince-name">Erick Proid Marta (13123098)</h2>
+                        <p class="section-paragraph details-paragraph" id="prince-desc">Calon Prince nomor urut 1.</p>
+                        <a href="https://www.instagram.com/porossinergi_001/" class="btn-details" id="prince-link" target="_blank">Details</a>
                     </div>
                     
                     <div class="small-candidate-icons">
@@ -446,9 +431,9 @@
                     <div class="candidate-wrapper" id="senat-text-wrapper">
                         <p class="sub-title">The Continuum</p>
                         <p class="sub-title">The Senate</p>
-                        <h2 class="candidate-name" id="senat-name">The Syamsa</h2>
-                        <p class="section-paragraph details-paragraph" id="senat-desc">Lorem ipsum dolor sit amet<br>msdad, masomasd, asdasd</p>
-                        <a href="#" class="btn-details">Details</a>
+                        <h2 class="candidate-name" id="senat-name">Yosua Otniel Ewaldo Sitorus (13123132)</h2>
+                        <p class="section-paragraph details-paragraph" id="senat-desc">Calon Senator nomor urut 1</p>
+                        <a href="https://www.instagram.com/otnielewaldo/" class="btn-details" id="senat-link" target="_blank">Details</a>
                     </div>
                     
                     <div class="small-candidate-icons">
@@ -504,7 +489,7 @@
     </main>
 
     <footer style="text-align: center; padding: 30px; background-color: var(--bg-darker); border-top: 1px solid rgba(192, 160, 96, 0.2); font-size: 0.9rem; color: #666;">
-        <p>© 2026 Pemilu HMM ITB. All Rights Reserved.</p>
+        <p>© 2026 Pemilu HMM ITB. All arts and design made from AI.</p>
     </footer>
 
     <script>
@@ -549,95 +534,91 @@
 
         // --- 3. DATA & LOGIKA SLIDESHOW KANDIDAT ---
 
-        // Data Prince (Termasuk path background section dan foto karakter)
+        // Menambahkan properti "link" ke setiap object data
         const princeData = [
             { 
-                name: "The Faza", 
-                desc: "Lorem ipsum dolor sit amet. Candidate number one aiming for the throne.", 
+                name: "Erick Proid Marta (13123098)", 
+                desc: "Calon Prince nomor urut 1.", 
                 bgImage: "url('./Image Resource/Caprincebg1.png')",
-                charImage: "url('./Image Resource/Caprince1.png')"
+                charImage: "url('./Image Resource/Caprince1.png')",
+                link: "https://www.instagram.com/porossinergi_001/"
             },
             { 
-                name: "The Second", 
-                desc: "Consectetur adipiscing elit. The challenger ready to bring new changes.", 
+                name: "Kayla Tanaya Chrisma (13123138)", 
+                desc: "Calon Prince nomor urut 2.", 
                 bgImage: "url('./Image Resource/Caprincebg2.png')",
-                charImage: "url('./Image Resource/Caprince2.png')"
+                charImage: "url('./Image Resource/Caprince2.png')",
+                link: "https://www.instagram.com/eksplorasipotensi/"
             }
         ];
 
-        // Data Senat
         const senatData = [
             { 
-                name: "The Syamsa", 
-                desc: "Lorem ipsum dolor sit amet<br>msdad, masomasd, asdasd", 
+                name: "Yosua Otniel Ewaldo Sitorus (13123132)", 
+                desc: "Calon Senator nomor urut 1", 
                 bgImage: "url('./Image Resource/Casenatbg1.png')",
-                charImage: "url('./Image Resource/Casenat1.png')"
+                charImage: "url('./Image Resource/Casenat1.png')",
+                link: "https://www.instagram.com/otnielewaldo/"
             },
             { 
-                name: "The Other", 
-                desc: "A visionary leader for the senate.<br>Ready to serve.", 
+                name: "Rangga Firdiansyah (13123127)", 
+                desc: "Calon Senator nomor urut 2", 
                 bgImage: "url('./Image Resource/Casenatbg2.png')",
-                charImage: "url('./Image Resource/Casenat2.png')"
+                charImage: "url('./Image Resource/Casenat2.png')",
+                link: "https://www.instagram.com/rangga_firdiansyah/"
             }
         ];
 
-        // Fungsi Ganti Prince
         function changePrince(index) {
             const sectionArea = document.getElementById('caprince');
             const imgBox = document.getElementById('prince-img');
             const nameEl = document.getElementById('prince-name');
             const descEl = document.getElementById('prince-desc');
             const wrapper = document.getElementById('prince-text-wrapper');
+            const linkEl = document.getElementById('prince-link'); // Mengambil elemen tombol details
             const btns = document.querySelectorAll('#caprince .small-icon-btn');
 
-            // Update UI Tombol
             btns.forEach(btn => btn.classList.remove('active'));
             btns[index].classList.add('active');
 
-            // Efek Fade pada teks
             wrapper.style.opacity = 0;
-            imgBox.style.opacity = 0; // opsional jika ingin foto fade in/out juga
+            imgBox.style.opacity = 0; 
             
             setTimeout(() => {
-                // Update Background Section & Foto Karakter
                 sectionArea.style.backgroundImage = princeData[index].bgImage;
                 imgBox.style.backgroundImage = princeData[index].charImage;
                 
-                // Update Teks
                 nameEl.innerText = princeData[index].name;
                 descEl.innerHTML = princeData[index].desc;
+                linkEl.href = princeData[index].link; // Memperbarui URL
                 
-                // Fade In teks & foto
                 wrapper.style.opacity = 1;
                 imgBox.style.opacity = 1;
             }, 300); 
         }
 
-        // Fungsi Ganti Senat
         function changeSenat(index) {
             const sectionArea = document.getElementById('casenat');
             const imgBox = document.getElementById('senat-img');
             const nameEl = document.getElementById('senat-name');
             const descEl = document.getElementById('senat-desc');
             const wrapper = document.getElementById('senat-text-wrapper');
+            const linkEl = document.getElementById('senat-link'); // Mengambil elemen tombol details
             const btns = document.querySelectorAll('#casenat .small-icon-btn');
 
-            // Update UI Tombol
             btns.forEach(btn => btn.classList.remove('active'));
             btns[index].classList.add('active');
 
-            // Efek Fade pada teks
             wrapper.style.opacity = 0;
             imgBox.style.opacity = 0;
             
             setTimeout(() => {
-                // Update Background Section & Foto Karakter
                 sectionArea.style.backgroundImage = senatData[index].bgImage;
                 imgBox.style.backgroundImage = senatData[index].charImage;
 
-                // Update Teks
                 nameEl.innerText = senatData[index].name;
                 descEl.innerHTML = senatData[index].desc;
+                linkEl.href = senatData[index].link; // Memperbarui URL
                 
                 wrapper.style.opacity = 1;
                 imgBox.style.opacity = 1;
